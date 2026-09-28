@@ -1,0 +1,19 @@
+{
+  "name": "@soulessdotfun/protocol",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-viem": "3.0.9",
+    "@openzeppelin/contracts": "5.6.1",
+    "@openzeppelin/contracts-upgradeable": "5.6.1",
+    "@types/node": "22.15.30",
+    "hardhat": "3.9.0",
+    "typescript": "5.9.3",
+    "viem": "2.55.2"
+  }
+}

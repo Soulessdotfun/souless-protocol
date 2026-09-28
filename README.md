@@ -2,27 +2,17 @@
 
 Public on-chain protocol contracts and integration references for [Souless](https://souless.fun), an Arc-native launch market for humans and agents.
 
-## Scope
+## What this repository is
 
-This repository is a deliberately curated public protocol surface. It is **not** a mirror of the Souless production monorepo.
+This is a deliberately curated public protocol surface. It is **not** a mirror of the Souless production monorepo.
 
-The initial public source set is intended to make deployed protocol behavior and third-party integrations easier to inspect. It includes selected:
+The initial release contains selected token, launch-registry, permanent-liquidity-locking, and fee-accounting contracts plus the interfaces and deployment references needed by external integrators.
 
-- token primitives;
-- launch registry and permanent LP-locking contracts;
-- fee accounting and distribution contracts;
-- Solidity interfaces used by integrators;
-- sanitized Arc mainnet deployment references.
+It intentionally excludes the production application, API, off-chain InfoFi scoring and anti-gaming logic, narrative intelligence, databases, indexing infrastructure, deployment automation, secrets, and operator tooling.
 
-The following remain outside this repository:
+Guarded-launch implementation contracts are not included in the initial source release while that surface undergoes additional hardening. Integration-facing addresses and interfaces remain available for independent on-chain verification.
 
-- production web and API services;
-- off-chain InfoFi scoring and anti-gaming logic;
-- semantic scoring/model configuration;
-- narrative classification and intelligence pipelines;
-- databases, indexing infrastructure, deployment automation, secrets, and operator tooling.
-
-Guarded-launch implementation contracts are not included in the initial source release while that surface undergoes additional hardening. Their deployed addresses may still be listed for independent on-chain verification.
+See [docs/publication-boundary.md](docs/publication-boundary.md) for the exact boundary.
 
 ## Network
 
@@ -34,18 +24,41 @@ Arc USDC ERC-20 predeploy:
 
 `0x3600000000000000000000000000000000000000`
 
+Canonical deployment references are in [deployments/arc-mainnet.json](deployments/arc-mainnet.json).
+
+## Published source
+
+The first public source set includes:
+
+- `contracts/token/LaunchToken.sol`
+- `contracts/token/TokenFactory.sol`
+- `contracts/launch/LaunchRegistry.sol`
+- `contracts/launch/PermanentLpLocker.sol`
+- fee vault, dispatch, partner-pool, reserve, and timelock contracts under `contracts/fees/`
+- required integration interfaces under `contracts/interfaces/`
+
+## Build
+
+Requires Node.js 22+.
+
+```bash
+npm install
+npm run compile
+npm run typecheck
+```
+
+Solidity is compiled with `0.8.28`, optimizer enabled, and 10,000 optimizer runs to match the production contract toolchain.
+
+## Integration verification
+
+For the public surfaces used by the Souless DefiLlama adapters, see [docs/defillama-verification.md](docs/defillama-verification.md).
+
 ## Canonical resources
 
 - Website: https://souless.fun
 - Documentation: https://docs.souless.fun
 - GitHub organization: https://github.com/Soulessdotfun
 
-## Source-of-truth policy
-
-Souless is developed in a private production monorepo. Files published here are exported intentionally from that source of truth after review. Internal application logic is not synchronized into this repository.
-
-Deployment addresses in this repository are public verification references. Integrators should also verify deployed bytecode and current on-chain state before relying on an address.
-
 ## Security
 
-See [SECURITY.md](SECURITY.md) once the initial protocol-source bootstrap lands.
+Please read [SECURITY.md](SECURITY.md) before reporting a potentially exploitable issue.
