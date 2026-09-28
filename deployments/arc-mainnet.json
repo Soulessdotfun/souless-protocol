@@ -19,13 +19,13 @@
     "feeDispatcher": "0x0C8C98B7976E114fea895e827182B5dA0b3B9dcc",
     "tokenFeeReserve": "0x35d6a88D7B7AC9d1c6304202fba87BAF0EdF58c8",
     "tokenFeeTimelock": "0xA853834dAf62AB055a1F4113480746e240d82316",
-    "permanentLpLocker": "0xd0905DB594A9281aC1bC64204cce340eE0241E0D"
+    "permanentLpLocker": "0xd0905DB594A9281aC1bC64204cce340eE0241E0D",
+    "openingFeeVault": "0x56cb8D3549cdD2E67E79d9Df3229F3A52C82Df03"
   },
   "referenceOnly": {
     "directMarketLaunchAdapter": "0x863990Ded74bdCA9099e8364c365638DC0424da5",
     "directLaunchCoordinator": "0x320CdE8895E696AA4DA64FF649bE11Bb7DCdD1d4",
     "guardedAdapter": "0xCAaDA1c6717F7D52146af6B614Dc84C048Ab9F7D",
-    "guardedOpeningFeeVault": "0x56cb8D3549cdD2E67E79d9Df3229F3A52C82Df03",
     "guardFactory": "0xb8480657a502fc65fC903948e045a6f4625928Af",
     "guardedLocker": "0x2275A163611932e3BEd4110d67302226ee1A283e",
     "guardedTokenFeeTimelock": "0x4dD5778C11C8f38c3238Cf0CAeB4F0ddAAEebF79",
